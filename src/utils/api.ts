@@ -1,7 +1,7 @@
 import { Product } from "../shared/types"
 
 export const getProducts = () => {
-  return fetch("http://localhost:4000/products")
+  return fetch("https://reef-frontend-product-service.herokuapp.com/products")
     .then((res) => {
       return res.json()
     })
