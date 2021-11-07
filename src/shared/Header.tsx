@@ -7,9 +7,9 @@ export const Header = () => (
     <div className="container">
       <div className="nav-brand">
         <Link to="/">
-          <h1>Goblin Store</h1>
+          <h1>The Lagoon Store</h1>
         </Link>
-        <p>Everything for your Typescript adventure</p>
+        <p>Everything for your Reef adventure</p>
       </div>
       <div className="cart">
         <CartWidget />
