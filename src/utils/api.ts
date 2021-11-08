@@ -9,7 +9,7 @@ export const getProducts = () => {
 }
 
 export const getOrder = (id: string) => {
-  return fetch(`http://localhost:4000/order/${id}`)
+  return fetch(`https://reef-frontend-product-service.herokuapp.com/order/${id}`)
     .then((res) => {
       return res.json()
     })
@@ -21,7 +21,7 @@ export interface CheckoutPayload {
 }
 
 export const postCheckout = (data: CheckoutPayload) => {
-  return fetch(`http://localhost:4000/checkout`, {
+  return fetch(`https://reef-frontend-product-service.herokuapp.com/checkout`, {
     method: "post",
     headers: {
       Accept: "application/json",
