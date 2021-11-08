@@ -29,7 +29,7 @@ export const Checkout = ({
         <CheckoutList products={products} />
         <p>Total: {totalPrice()} Zm</p>
       </div>
-      <p>Enter your payment credentials:</p>
+      <p>Enter your Reef credentials:</p>
       <CheckoutForm submit={submitCheckout} />
     </section>
   )

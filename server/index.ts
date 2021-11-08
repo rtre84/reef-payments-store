@@ -11,6 +11,7 @@ interface Product {
 }
 
 interface Order {
+  generated_address: "random_reef_address",
   products: Product[]
 }
 
@@ -40,7 +41,7 @@ app.get("/order/:orderId", (req, res) => {
   if (order) {
     return res.json({
       success: true,
-      products: order.products 
+      products: order.products
     })
   } else {
     return res.json({
@@ -50,5 +51,5 @@ app.get("/order/:orderId", (req, res) => {
 })
 
 app.listen(port, () =>
-  console.log(`Goblin store backend running on http://localhost:${port}!`)
+  console.log(`Lagoon store backend running on http://localhost:${port}!`)
 )

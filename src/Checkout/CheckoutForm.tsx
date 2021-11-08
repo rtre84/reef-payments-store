@@ -8,19 +8,10 @@ interface CheckoutFormProps {
 }
 
 const validationSchema = yup.object().shape({
-  name: yup.string().required(),
-  cardNumber: yup
-    .string()
-    .required()
-    .matches(
-      /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/,
-      "Card should have xxxx xxxx xxxx xxxx format"
-    ),
-  expDate: yup.date().nullable().default(null).required(),
-  cvv: yup
-    .string()
-    .required()
-    .matches(/^\d\d\d$/, "CVV should contain three numbers"),
+    api_key: yup
+        .string()
+        .required(),
+    webhook: yup.string().required(),
 })
 
 export const CheckoutForm = ({
@@ -34,49 +25,26 @@ export const CheckoutForm = ({
   return (
     <form onSubmit={handleSubmit(submit)}>
       <FormField
-        placeholder="John Smith"
+        placeholder="abcd123450"
         type="text"
-        name="name"
-        label="Cardholders Name"
+        name="api_key"
+        label="API Key"
         inputRef={register}
-        errors={errors.name}
-      />
-      <FormField
-        placeholder="0000 0000 0000 0000"
-        type="tel"
-        inputMode="numeric"
-        autoComplete="cc-number"
-        name="cardNumber"
-        label="Card Number"
+        errors={errors.api_key}
         normalize={(value) => {
-          return (
-            value
-              .replace(/\s/g, "")
-              .match(/.{1,4}/g)
-              ?.join(" ")
-              .substr(0, 19) || ""
-          )
+          return value.substr(0, 20)
         }}
-        inputRef={register}
-        errors={errors.cardNumber}
       />
       <FormField
-        type="month"
-        name="expDate"
-        label="Expiration Date"
-        inputRef={register}
-        errors={errors.expDate}
-      />
-      <FormField
-        placeholder="000"
-        type="number"
-        name="cvv"
-        label="CVV"
-        inputRef={register}
-        errors={errors.cvv}
-        normalize={(value) => {
-          return value.substr(0, 3)
-        }}
+          placeholder="https://test-webhook.notarealaddress.com"
+          type="text"
+          name="webhook"
+          label="Webhook URL"
+          inputRef={register}
+          errors={errors.url}
+          normalize={(value) => {
+              return value.substr(0, 200)
+          }}
       />
       <button className="nes-btn is-primary">Place order</button>
     </form>
