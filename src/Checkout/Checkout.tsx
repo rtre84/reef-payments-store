@@ -18,7 +18,7 @@ export const Checkout = ({
       products
     })
     clearCart()
-    window.location.assign(`https://reef-frontend-product-service.herokuapp.com/order/?orderId=${orderId}`)
+    window.location.assign(`/order/?orderId=${orderId}`)
   }
 
   return (
