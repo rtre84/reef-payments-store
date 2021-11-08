@@ -30,7 +30,7 @@ export const ProductCard = ({
         alt="goblin"
       />
       <p>{datum.name}</p>
-      <p>{datum.price} Zm</p>
+      <p>{datum.price} Reef</p>
       {isInCart ? (
         <button disabled className="nes-btn is-disabled">
           Added to cart

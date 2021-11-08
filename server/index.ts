@@ -50,6 +50,11 @@ app.get("/order/:orderId", (req, res) => {
   }
 })
 
+
+app.get("/wallet", (req, res) => {
+  return "sfhkjdfhs234423"
+})
+
 app.listen(port, () =>
   console.log(`Lagoon store backend running on http://localhost:${port}!`)
 )

@@ -36,7 +36,7 @@ export const Cart = ({
             removeFromCart={removeFromCart}
           />
         ))}
-        <p>Total: {totalPrice()} Zm</p>
+        <p>Total: {totalPrice()} Reef</p>
       </div>
       <div>
         <Link to="/checkout">

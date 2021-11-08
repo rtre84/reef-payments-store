@@ -27,7 +27,7 @@ export const Checkout = ({
       <div className="nes-container is-rounded checkout-list-wrapper">
         <p>You are going to buy:</p>
         <CheckoutList products={products} />
-        <p>Total: {totalPrice()} Zm</p>
+        <p>Total: {totalPrice()} Reef</p>
       </div>
       <p>Enter your Reef credentials:</p>
       <CheckoutForm submit={submitCheckout} />
